@@ -1,0 +1,1 @@
+Below are explanations of all the scripts and their functionality
