@@ -24,3 +24,5 @@ A description of the action of each script is given below in the format:
 "./8-firstdelete" : Deletes the file created by above command
 
 "./9-firstdirdelete" : Deletes directory created by command 6. Assumes it is empty
+
+"./10-back" : Move back to previous directory
