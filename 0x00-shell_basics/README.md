@@ -9,3 +9,5 @@ A description of the action of each script is given below in the format:
 "./2-bring_me_home" : Changes current directory to home
 
 "./3-listfiles" : Displays directory content in long format
+
+"./4-listmorefiles" : Display content directories including hidden files in long format
