@@ -22,3 +22,5 @@ A description of the action of each script is given below in the format:
 "./7-movethatfie" : Moves a file named 'betty' from /tmp/ to directory created above
 
 "./8-firstdelete" : Deletes the file created by above command
+
+"./9-firstdirdelete" : Deletes directory created by command 6. Assumes it is empty
