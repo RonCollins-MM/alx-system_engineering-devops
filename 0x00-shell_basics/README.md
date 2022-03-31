@@ -18,3 +18,5 @@ A description of the action of each script is given below in the format:
 			   Including hidden files
 
 "./6-firstdirectory" : Creates a directory named 'my_first_directory' in /tmp/
+
+"./7-movethatfie" : Moves a file named 'betty' from /tmp/ to /tmp/my_first_directory
