@@ -12,4 +12,9 @@ A description of the action of each script is given below in the format:
 
 "./4-listmorefiles" : Display content directories including hidden files in long format
 
+"./5-listfilesdigitonly" : Displays the current directory content
+			   In long format
+			   With User and Group IDs displayed numerically
+			   Including hidden files
+
 "./6-firstdirectory" : Creates a directory named 'my_first_directory' in /tmp/
