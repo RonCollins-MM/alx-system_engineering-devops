@@ -11,3 +11,5 @@ A description of the action of each script is given below in the format:
 "./3-listfiles" : Displays directory content in long format
 
 "./4-listmorefiles" : Display content directories including hidden files in long format
+
+"./6-firstdirectory" : Creates a directory named 'my_first_directory'
