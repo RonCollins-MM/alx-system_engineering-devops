@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -asp --format=comma \n
+ls -pam
