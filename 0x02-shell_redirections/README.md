@@ -1,0 +1,1 @@
+This directory contains ALX assignments on shell IO redirections
