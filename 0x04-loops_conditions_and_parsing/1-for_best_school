@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# prints "best school" ten times
+# Prints "best school" ten times
 for i in "Best School" "Best School" "Best School"\
  "Best School" "Best School" "Best School"\
  "Best School" "Best School" "Best School" "Best School";
