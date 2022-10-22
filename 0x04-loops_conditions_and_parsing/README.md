@@ -1,1 +1,1 @@
-loops, conditions and parsing
+Learning about loops, control flow conditions and parsing in shell scripts.
