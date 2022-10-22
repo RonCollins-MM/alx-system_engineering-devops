@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
-# print "best school" ten times in a while loop
+# A while loop that:
+# prints 'bad luck' for every 4th iteration
+# prints 'good luck'for every 8th iteration
+# prints 'Best School' for every other iteration
+
 n=0
-while [ "$n" -le 9 ];
-      do n=$((n + 1));
-   if [ "$n" = 4 ];
-   then
-	  echo "bad luck";
-   elif [ "$n" = 8 ];
-   then
-       echo "good luck"
-   else
-       echo "Best School";
-   fi
+while [ "$n" -le 9 ]
+do 
+	n=$((n + 1))
+	if [ "$n" = 4 ] then
+		echo "bad luck"
+	elif [ "$n" = 8 ] then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
 done
