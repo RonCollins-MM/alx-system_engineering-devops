@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # displays the content of the current dir in a list format
-
+# with the first part of the file name sliced
 for file in *;
     do echo "${file#*-}";
 done
