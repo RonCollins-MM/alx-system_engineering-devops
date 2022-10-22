@@ -2,23 +2,20 @@
 # prints fizzbuzz
 set -m
 n=1
-while [ $n -le 100 ];
-      do
+while [ $n -le 100 ]
+do
 	a=$((n%3))
-	if [ "$a" = 0 ];
-	then
+	if [ "$a" = 0 ] then
 		b=$((n%5))
-		if [ "$b" = 0 ];
-		then
+		if [ "$b" = 0 ] then
 			echo "FizzBuzz"
 		else
-			echo "Fizz";
+			echo "Fizz"
 		fi
-	elif [ $((n%5)) = 0 ];
-	then
-		echo "Buzz";
+	elif [ $((n%5)) = 0 ] then
+		echo "Buzz"
 	else
-		echo $n;
+		echo $n
 	fi
 	n=$((n + 1))
 done
