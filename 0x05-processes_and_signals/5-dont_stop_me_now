@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# dont stop me now
+# Killing a process from script
 var=$( (ps aux | pgrep bash | tail -n +2) | head -n +1)
 kill "$var"
