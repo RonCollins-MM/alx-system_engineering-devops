@@ -33,7 +33,7 @@ file { '/var/www/html/index.html':
   content => "Hello World!\n",
 }
 
-# create index file
+# create 404: Not Found file
 file { '/var/www/html/404.html':
   content => "I ain't never heard or seen sucha page !! :grimacing face:\n",
 }
