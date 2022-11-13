@@ -1,35 +1,48 @@
 #!/usr/bin/env bash
-# This script will configure a webserver with Nginx and do some basic initialization of environment as described in next line.
-# Nginx will be installed and configured to allow HTTP, have a 404 page and a redirection page.
-# A custom HTTP header is added with the name `X-Served-By`
-# The value of the custom HTTP header is the hostname of the server Nginx is running on
+# Installs nginx webserver, configure redirection and custom 404 not found page
 
 sudo apt-get -y update
-sudo apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
-sudo mkdir -p /var/www/html /var/www/error
-sudo chmod -R 755 /var/www
-echo 'Hello World!' > /var/www/html/index.html
-echo "Ceci n'est pas une page" > /var/www/html/404.html
-server_config=\
-"server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
-	root /var/www/html;
-	index index.html index.htm index.nginx-debian.html;
-	server_name _;
-	add_header X-Served-By \$hostname;
-	location / {
-		try_files \$uri \$uri/ =404;
-	}
-	if (\$request_filename ~ redirect_me){
-		rewrite ^ https://youtube.com permanent;
-	}
-	error_page 404 /404.html;
-	location = /404.html {
-		internal;
-	}
-}"
+sudo apt-get -y upgrade
 
-echo "$server_config" > /etc/nginx/sites-enabled/default
-sudo service nginx restart
+sudo apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+
+mkdir -p /var/www/html/
+chmod -R 755 /var/www
+echo 'Hello World' > /var/www/html/index.nginx-debian.html
+
+new_config=\
+"server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        
+	root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+	add_header X-Served-By \$hostname;
+
+        location / {
+                try_files \$uri \$uri/ =404;
+        }
+
+        error_page 404 /404.html;
+        location  /404.html {
+            internal;
+        }
+        
+        if (\$request_filename ~ redirect_me){
+            rewrite ^ https://www.youtube.com/user/Computerphile permanent;
+        }
+}
+"
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+echo "$new_config" > /etc/nginx/sites-available/default
+
+if [ "$(pgrep -c nginx)" -le 0 ];
+then
+    service nginx start
+else
+    service nginx restart
+fi;
