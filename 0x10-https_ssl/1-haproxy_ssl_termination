@@ -43,4 +43,4 @@ backend servers_hol
         option httpclose
         option forwardfor
         server 37954-web-01 54.174.153.154:80 check
-        server 37954-web-02 18.207.234.225:81 check
+        server 37954-web-02 18.207.234.225:80 check
